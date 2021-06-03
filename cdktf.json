@@ -1,7 +1,9 @@
 {
   "language": "typescript",
-  "app": "yarn --silent compile && node main.js",
-  "terraformProviders": [],
+  "app": "yarn --silent compile && node dist/src",
+  "terraformProviders": [
+    "aws@~> 3.0"
+  ],
   "terraformModules": [],
   "context": {
     "excludeStackIdFromLogicalIds": "true",

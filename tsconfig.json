@@ -9,6 +9,7 @@
     "lib": [
       "es2018"
     ],
+    "outDir": "./dist",
     "module": "CommonJS",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
@@ -25,10 +26,10 @@
     "target": "ES2018"
   },
   "include": [
-    "src/*.ts",
-    "**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    ".gen"
   ]
 }
