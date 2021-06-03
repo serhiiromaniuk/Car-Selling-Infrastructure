@@ -1,17 +1,16 @@
 # Car-Selling-Infrastructure
 Car-Selling IaaC
 
-========================================================================================================
-
+## ===================================================================
   Your cdktf typescript project is ready!
 
   cat help                Print this message
 
   Compile:
-    npm run get           Import/update Terraform providers and modules (you should check-in this directory)
-    npm run compile       Compile typescript code to javascript (or "npm run watch")
-    npm run watch         Watch for changes and compile typescript in the background
-    npm run build         Compile typescript
+    yarn get           Import/update Terraform providers and modules (you should check-in this directory)
+    yarn compile       Compile typescript code to javascript (or "yarn watch")
+    yarn watch         Watch for changes and compile typescript in the background
+    yarn build         Compile typescript
 
   Synthesize:
     cdktf synth [stack]   Synthesize Terraform resources from stacks to cdktf.out/ (ready for 'terraform apply')
@@ -27,20 +26,20 @@ Car-Selling IaaC
 
 
  Upgrades:
-   npm run upgrade        Upgrade cdktf modules to latest version
-   npm run upgrade:next   Upgrade cdktf modules to latest "@next" version (last commit)
+   yarn upgrade        Upgrade cdktf modules to latest version
+   yarn upgrade:next   Upgrade cdktf modules to latest "@next" version (last commit)
 
  Use Prebuilt Providers:
 
   You can add one or multiple of the prebuilt providers listed below:
 
-  npm install @cdktf/provider-aws
-  npm install @cdktf/provider-google
-  npm install @cdktf/provider-azurerm
-  npm install @cdktf/provider-docker
-  npm install @cdktf/provider-github
-  npm install @cdktf/provider-null
+  yarn add @cdktf/provider-aws
+  yarn add @cdktf/provider-google
+  yarn add @cdktf/provider-azurerm
+  yarn add @cdktf/provider-docker
+  yarn add @cdktf/provider-github
+  yarn add @cdktf/provider-null
 
   You can also build any module or provider locally. Learn more https://cdk.tf/modules-and-providers
 
-========================================================================================================
+## ===================================================================
