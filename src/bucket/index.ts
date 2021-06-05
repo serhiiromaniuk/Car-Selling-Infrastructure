@@ -30,7 +30,7 @@ for (const item of fs.readdirSync(images)) {
         source: new pulumi.asset.FileAsset(filePath)
     });
     uploadedFiles.push(
-        bucket.bucketDomainName.apply(name => "http://" + name + '/' + item)
+        bucket.bucketDomainName.apply(name => 'http://' + name + '/' + item)
     );
 }
 
