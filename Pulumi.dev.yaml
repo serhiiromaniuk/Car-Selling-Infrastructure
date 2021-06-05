@@ -1,5 +1,3 @@
 config:
   aws:region: us-east-1
-  car-selling:dbPassword:
-    secure: AAABAKygAyvDvzHweJFdTzq9RVhaTqtz1n8ZxRLJSoPL095F9Tg=
   pulumi:template: aws-typescript

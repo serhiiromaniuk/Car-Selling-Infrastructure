@@ -9,6 +9,7 @@
         "@pulumi/awsx": "^0.30.0"
     },
     "scripts": {
+        "select": "pulumi stack select dev",
         "preview": "pulumi preview",
         "up": "pulumi up --diff --refresh --yes",
         "destroy": "pulumi destroy -s serhiiromaniuk/car-selling/dev"
