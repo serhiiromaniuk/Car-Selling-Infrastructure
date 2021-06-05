@@ -3,7 +3,10 @@ import { bucketProperties } from '../specs';
 import * as pulumi from "@pulumi/pulumi";
 import * as fs from "fs";
 
-const bucket = new aws.s3.Bucket(bucketProperties.name);
+const bucket = new aws.s3.Bucket(bucketProperties.name, {
+    forceDestroy: bucketProperties.forceDestroy,
+    bucket: bucketProperties.bucket
+});
 const bucketPolicy = new aws.s3.BucketPolicy("bucketPolicy", {
     bucket: bucket.id,
     policy: bucket.arn.apply(bucketArn => JSON.stringify({
