@@ -24,15 +24,17 @@ const bucketPolicy = new aws.s3.BucketPolicy("bucketPolicy", {
 const images = __dirname + '/images';
 const uploadedFiles = [];
 for (const item of fs.readdirSync(images)) {
+    const file = 'images/' + item;
     const filePath = require("path").join(images, item);
-    const siteObject = new aws.s3.BucketObject(item, {
+    const siteObject = new aws.s3.BucketObject(file, {
         bucket: bucket,
         source: new pulumi.asset.FileAsset(filePath)
     });
     uploadedFiles.push(
-        bucket.bucketDomainName.apply(name => 'http://' + name + '/' + item)
+        bucket.bucketDomainName.apply(name => 'http://' + name + '/' + file)
     );
 }
 
 export const sample_bucket_files = uploadedFiles;
 export const sample_bucket = bucket;
+export * from './policy';

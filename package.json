@@ -10,8 +10,9 @@
     },
     "scripts": {
         "select": "pulumi stack select dev",
+        "login": "pulumi login s3://pulumi-backend-serhiiromaniuk-car-selling-infrastructure",
         "preview": "npm run select && pulumi preview",
-        "deploy": "pulumi up --yes",
+        "deploy": "npm run login && pulumi up --yes",
         "destroy": "pulumi destroy -s serhiiromaniuk/car-selling/dev"
     }
 }
