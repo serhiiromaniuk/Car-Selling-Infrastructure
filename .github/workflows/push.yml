@@ -12,7 +12,7 @@ jobs:
   Preview_Job:
     name: Preview Environemnt State
     runs-on: ubuntu-latest
-    steps: &pre
+    steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
