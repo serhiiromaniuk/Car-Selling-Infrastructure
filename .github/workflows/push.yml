@@ -52,7 +52,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Install Pulumi CLI
         uses: pulumi/action-install-pulumi-cli@v1
-      - name: Preview stack 
+      - name: Deploy stack 
         run: |
           npm install
           npm run preview

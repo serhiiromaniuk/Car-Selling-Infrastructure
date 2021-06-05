@@ -2,8 +2,10 @@ import {
     BucketPropertiesInterface
 } from './types';
 
+const bucketName = process.env.BUCKET_NAME || process.env.GITHUB_REPOSITORY || ''; 
+
 export const bucketProperties: BucketPropertiesInterface = {
-    name: process.env.BUCKET_NAME || process.env.GITHUB_REPOSITORY || 'sample-bucket',
+    name: bucketName ? bucketName.replace('/', '-') : 'sample-bucket',
     bucket: process.env.BUCKET_NAME || process.env.GITHUB_REPOSITORY || 'sample-bucket',
     forceDestroy: true
 };
