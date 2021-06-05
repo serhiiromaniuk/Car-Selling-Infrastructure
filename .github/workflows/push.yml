@@ -22,11 +22,13 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Install Pulumi CLI
         uses: pulumi/action-install-pulumi-cli@v1
-      - run: npm install
-      - run: npm run preview
+      - name: Preview stack 
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+        run: |
+          npm install
+          npm run preview
       # - uses: pulumi/actions@v3
       #   with:
       #     command: up
       #     stack-name: dev
-        env:
-          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
