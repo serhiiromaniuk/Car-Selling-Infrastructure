@@ -3,10 +3,7 @@ import { bucketProperties } from '../specs';
 import * as pulumi from "@pulumi/pulumi";
 import * as fs from "fs";
 
-const bucket = new aws.s3.Bucket(bucketProperties.name, {
-    forceDestroy: bucketProperties.forceDestroy,
-    bucket: bucketProperties.bucket
-});
+const bucket = new aws.s3.Bucket(bucketProperties.name, bucketProperties.args);
 const bucketPolicy = new aws.s3.BucketPolicy("bucketPolicy", {
     bucket: bucket.id,
     policy: bucket.arn.apply(bucketArn => JSON.stringify({
@@ -37,5 +34,5 @@ for (const item of fs.readdirSync(images)) {
     );
 }
 
-export const files = uploadedFiles;
-export const bucketOut = bucket;
+export const sample_bucket_files = uploadedFiles;
+export const sample_bucket = bucket;

@@ -2,16 +2,21 @@ import {
     BucketPropertiesInterface
 } from './types';
 
-const bucketName = process.env.BUCKET_NAME || process.env.GITHUB_REPOSITORY || ''; 
+const name = process.env.BUCKET_NAME || process.env.GITHUB_REPOSITORY || false; 
+const bucketName = name ? name.replace('/', '-').toLocaleLowerCase() : 'sample-bucket'
 
 export const bucketProperties: BucketPropertiesInterface = {
-    name: bucketName ? bucketName.replace('/', '-') : 'sample-bucket',
-    bucket: process.env.BUCKET_NAME || process.env.GITHUB_REPOSITORY || 'sample-bucket',
-    forceDestroy: true
+    name: bucketName,
+    args: {
+        bucket: bucketName,
+        forceDestroy: true
+    }
 };
 
+const beName = 'pulumi-backend-' + bucketName;
 export const backendBucketProperties: BucketPropertiesInterface = {
-    name: 'pulumi-backend',
-    bucket: 'pulumi-backend',
-    forceDestroy: false
+    name: beName,
+    args: {
+        bucket: beName
+    }
 };

@@ -11,7 +11,7 @@
     "scripts": {
         "select": "pulumi stack select dev",
         "preview": "npm run select && pulumi preview",
-        "up": "pulumi up --skip-preview --yes",
+        "deploy": "pulumi up --yes",
         "destroy": "pulumi destroy -s serhiiromaniuk/car-selling/dev"
     }
 }
