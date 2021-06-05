@@ -3,9 +3,38 @@ on:
   push:
     branches:
       - master
+env:
+  PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+defaults:
+  run:
+    shell: bash
 jobs:
-  up:
+  Preview_Job:
     name: Preview Environemnt State
+    runs-on: ubuntu-latest
+    steps: &pre
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.13.1
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Install Pulumi CLI
+        uses: pulumi/action-install-pulumi-cli@v1
+      - name: Preview stack 
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+        run: |
+          npm install
+          npm run preview
+  Deploy_Job:
+    name: Deploy Environemnt
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -28,7 +57,4 @@ jobs:
         run: |
           npm install
           npm run preview
-      # - uses: pulumi/actions@v3
-      #   with:
-      #     command: up
-      #     stack-name: dev
+          npm run up
