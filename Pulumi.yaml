@@ -1,0 +1,3 @@
+name: car-selling
+runtime: nodejs
+description: AWS TypeScript Pulumi program

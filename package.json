@@ -1,42 +1,16 @@
 {
-  "name": "src",
-  "version": "1.0.0",
-  "main": "main.js",
-  "types": "main.ts",
-  "license": "MPL-2.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/serhiiromaniuk/Car-Selling-Infrastructure.git"
-  },
-  "author": "serhii.romaniuk.here@gmail.com",
-  "bugs": {
-    "url": "https://github.com/serhiiromaniuk/Car-Selling-Infrastructure/issues"
-  },
-  "homepage": "https://github.com/serhiiromaniuk/Car-Selling-Infrastructure#readme",
-  "private": true,
-  "scripts": {
-    "bootstrap": "yarn && yarn get",
-    "get": "cdktf get",
-    "build": "tsc",
-    "synth": "cdktf synth",
-    "compile": "tsc --pretty",
-    "watch": "tsc -w",
-    "test": "echo ok",
-    "upgrade": "yarn add cdktf@latest cdktf-cli@latest",
-    "upgrade:next": "yarn add cdktf@next cdktf-cli@next"
-  },
-  "engines": {
-    "node": ">=10.12"
-  },
-  "dependencies": {
-    "cdktf": "^0.4.0",
-    "constructs": "^3.3.75",
-    "@cdktf/provider-aws": "^1.0.80",
-    "cdktf-cli": "^0.4.0"
-  },
-  "devDependencies": {
-    "@types/node": "^15.12.0",
-    "typescript": "^4.3.2",
-    "lerna": "^3.22.1"
-  }
+    "name": "car-selling",
+    "devDependencies": {
+        "@types/node": "^10.17.60"
+    },
+    "dependencies": {
+        "@pulumi/pulumi": "^3.0.0",
+        "@pulumi/aws": "^4.0.0",
+        "@pulumi/awsx": "^0.30.0"
+    },
+    "scripts": {
+        "preview": "pulumi preview",
+        "up": "pulumi up --diff --refresh --yes",
+        "destroy": "pulumi destroy -s serhiiromaniuk/car-selling/dev"
+    }
 }
