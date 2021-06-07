@@ -1,5 +1,5 @@
 import * as aws from '@pulumi/aws';
-import { bucketProperties } from '../specs';
+import { bucketProperties, usersList } from '../specs';
 
 const bucketName = bucketProperties.name;
 const policyName = bucketProperties.name + '-policy';
@@ -23,7 +23,7 @@ const policy = new aws.iam.Policy(policyName, {
 });
 
 const test_attach = new aws.iam.UserPolicyAttachment(policyName + '-attachment', {
-    user: 'pizdecizada@gmail.com',
+    user: usersList[1],
     policyArn: policy.arn.apply(arn => arn),
 });
 

@@ -19,3 +19,15 @@ interface WebsiteInterface {
     redirectAllRequestsTo?: string,
     routingRules?: string
 }
+
+export interface DatabasePropertiesInterface {
+    allocatedStorage: number,
+    engine: string,
+    engineVersion: string,
+    instanceClass: string,
+    name: string,
+    parameterGroupName: string,
+    password: string,
+    skipFinalSnapshot: boolean,
+    username: string,
+}

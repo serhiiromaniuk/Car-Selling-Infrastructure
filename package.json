@@ -1,12 +1,14 @@
 {
     "name": "car-selling",
     "devDependencies": {
+        "@types/crypto-js": "^3.1.47",
         "@types/node": "^10.17.60"
     },
     "dependencies": {
-        "@pulumi/pulumi": "^3.0.0",
         "@pulumi/aws": "^4.0.0",
-        "@pulumi/awsx": "^0.30.0"
+        "@pulumi/awsx": "^0.30.0",
+        "@pulumi/pulumi": "^3.0.0",
+        "crypto-js": "^4.0.0"
     },
     "scripts": {
         "select": "pulumi stack select dev",
