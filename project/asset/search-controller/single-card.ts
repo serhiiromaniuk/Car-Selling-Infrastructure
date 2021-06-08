@@ -4,6 +4,5 @@ interface SearchSingleRequestInterface {
     card_id: string
 }
 
-interface SearchSingleResponseInterface {
-    data: CardSpecsInterface
+interface SearchSingleResponseInterface extends CardSpecsInterface {
 }
