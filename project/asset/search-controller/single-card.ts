@@ -1,8 +1,8 @@
-import { CardSpecsInterface } from '../card-controller/card-specs';
+import { RequestCardSpecsInterface } from '../card-controller/card-specs';
 
 interface SearchSingleRequestInterface {
     card_id: string
 }
 
-interface SearchSingleResponseInterface extends CardSpecsInterface {
+interface SearchSingleResponseInterface extends RequestCardSpecsInterface {
 }

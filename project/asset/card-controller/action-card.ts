@@ -1,5 +1,5 @@
-import { CardSpecsInterface } from './card-specs';
+import { RequestCardSpecsInterface } from './card-specs';
 
-interface ActionCardInterface extends Omit<CardSpecsInterface, 'photos'> {
+interface ActionCardInterface extends Omit<RequestCardSpecsInterface, 'photos'> {
     photos: Blob
 }

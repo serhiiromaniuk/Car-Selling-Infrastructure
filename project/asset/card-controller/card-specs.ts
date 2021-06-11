@@ -1,5 +1,4 @@
-export interface CardSpecsInterface {
-    card_id: number
+export interface RequestCardSpecsInterface {
     type: string
     link: string
     photos: string[]
@@ -22,4 +21,8 @@ export interface CardSpecsInterface {
     drive?: string
     seat_number?: number
     door_number?: number
+}
+
+export interface ResponseCardSpecsInterface extends RequestCardSpecsInterface {
+    card_id: number
 }
